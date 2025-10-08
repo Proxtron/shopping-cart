@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "a title",
+      "price": "19.90"
+    },
+    {
+      "id": "366b",
+      "title": "another title",
+      "price": "29.90"
+    },
+    {
+      "id": "b627",
+      "title": "another title",
+      "price": "29.90"
+    },
+    {
+      "id": "175b",
+      "title": "another title",
+      "price": "29.90"
+    },
+    {
+      "id": "60ba",
+      "title": "another title",
+      "price": "29.90"
+    }
+  ]
+}
