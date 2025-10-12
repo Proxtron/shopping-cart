@@ -4,7 +4,7 @@ import HomePage from './feature/home/HomePage';
 import CatalogPage from './feature/catalog/CatalogPage';
 import CartPage from "./feature/cart/CartPage";
 
-const router = createBrowserRouter([
+const routes = [
   { 
     path: "/", 
     element: <App/>,
@@ -14,6 +14,9 @@ const router = createBrowserRouter([
       { path: "cart", element: <CartPage/>}
     ]
   }
-]);
+];
+
+const router = createBrowserRouter(routes);
 
 export default router;
+export {routes};
