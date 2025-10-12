@@ -1,0 +1,30 @@
+.headerLink {
+    text-decoration: none;
+    font-family: "Uniqlo Pro Light Regular";
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #010101
+}
+
+.headerNav {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.header {
+    background-color: #FEFEFE;
+}
+
+.headerLogo {
+    width:72px;
+}
+
+.underlined::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #010101;
+    margin-top: 6px;
+}

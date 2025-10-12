@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(./assets/Helvetica\ Neue/HelveticaNeue-Medium.otf) format("opentype"),
+  url(./assets/Helvetica\ Neue/HelveticaNeue-Bold.otf) format("opentype"),
+  url(./assets/Helvetica\ Neue/HelveticaNeue-Light.otf) format("opentype"),
+  url(./assets/Helvetica\ Neue/HelveticaNeue-Thin.otf) format("opentype");
+  font-weight: 100 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Uniqlo Pro Light Regular";
+  src: url("https://db.onlinewebfonts.com/t/13bf1d3e6c7119293f9c96e5678096e6.eot");
+  src: url("https://db.onlinewebfonts.com/t/13bf1d3e6c7119293f9c96e5678096e6.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/13bf1d3e6c7119293f9c96e5678096e6.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/13bf1d3e6c7119293f9c96e5678096e6.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/13bf1d3e6c7119293f9c96e5678096e6.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/13bf1d3e6c7119293f9c96e5678096e6.svg#Uniqlo Pro Light Regular")format("svg");
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -20,6 +40,8 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 /* 6. Improve media defaults */
@@ -54,8 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 1rem;
   text-align: center;
 }
