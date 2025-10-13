@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HomePage component > renders correctly 1`] = `
+<header
+  class="_header_c92180"
+>
+  <nav
+    class="_headerNav_c92180"
+  >
+    <a
+      class="_headerLink_c92180"
+      data-discover="true"
+      href="/"
+    >
+      <img
+        alt="Back to home page"
+        class="_headerLogo_c92180"
+        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2090%2040'%20width='90'%20height='40'%3e%3ctitle%3eUNIQLO%20home%3c/title%3e%3cpath%20fill='red'%20d='M50%200h40v40H50zM0%200h40v40H0z'%3e%3c/path%3e%3cg%20fill='%23fff'%3e%3cpath%20d='M79.48%205.47h2.53v12.64h-2.53zM63.47%2013.9a4.21%204.21%200%200%201-8.42%200V5.47h2.53v8.43a1.68%201.68%200%201%200%203.36%200V5.47h2.53zm11.79%2020.63h-8.42V21.89h2.53V32h5.89v2.53zm0-16.42h-2.53l-3.36-7.22v7.22h-2.53V5.47h2.53l3.36%207.22V5.47h2.53v12.64zm-16%203.78a4.21%204.21%200%200%200-4.21%204.22v4.21a4.21%204.21%200%200%200%204.21%204.21%204.34%204.34%200%200%200%20.82-.07l.86%202.6h2.53l-1.25-3.75a4.2%204.2%200%200%200%201.25-3v-4.2a4.21%204.21%200%200%200-4.21-4.22m1.68%208.43a1.68%201.68%200%201%201-3.36%200v-4.21a1.68%201.68%200%201%201%203.36%200zm19.8-8.43a4.22%204.22%200%200%200-4.22%204.22v4.21a4.21%204.21%200%200%200%208.42%200v-4.21a4.21%204.21%200%200%200-4.21-4.22m1.68%208.43a1.68%201.68%200%200%201-3.37%200v-4.21a1.68%201.68%200%200%201%203.37%200zM22.74%2015.16H34.1v2.52H22.74zM24%205.47h8.84V8H24zm-9.26%200H7.15V8h5.06v7.16H5.9v2.52h11.36v-2.52h-2.52V5.47zm8%2016.84v12.22H34.1V22.31zM31.57%2032h-6.31v-7.16h6.31zM7.15%2022.31l-1.28%206.12h2.52l.76-3.59h5.07L12.73%2032H5.14l-.51%202.53h10.11l2.52-12.22H7.15z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e"
+      />
+    </a>
+    <a
+      class="_headerLink_c92180 
+                    false
+                "
+      data-discover="true"
+      href="/catalog"
+    >
+      Catalog
+    </a>
+    <a
+      class="_headerLink_c92180
+                    false
+                "
+      data-discover="true"
+      href="/cart"
+    >
+      <img
+        alt="Navigate to Cart Page"
+        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20viewBox='0%200%2024%2024'%20class='ito-primary-icon-color'%3e%3cpath%20fill='currentColor'%20fill-rule='evenodd'%20d='m7.044%206.566-.004-3.06H2.008v1.199h3.834l.014%2010.754h12.897l2.24-8.894zm10.774%207.694H7.055l-.008-6.495h12.407zm-.85%206.242a1.5%201.5%200%201%200%200-3%201.5%201.5%200%200%200%200%203m-8.015-1.5a1.5%201.5%200%201%201-3%200%201.5%201.5%200%200%201%203%200'%20clip-rule='evenodd'%3e%3c/path%3e%3c/svg%3e"
+      />
+    </a>
+  </nav>
+</header>
+`;
