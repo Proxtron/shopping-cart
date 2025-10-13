@@ -1,0 +1,40 @@
+.parkaImage {
+    object-fit: cover;
+    min-height: 90vh;
+}
+
+.homePage {
+    position: relative;
+    color: #FEFEFE;
+    text-shadow: 3px 3px 5px #666;
+    text-align: left;
+}
+
+.featuredProductInfo {
+    position: absolute;
+    bottom: 50%;
+    left: 5%;
+    max-width: 400px;
+    transform: translateY(50%);
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: .75rem;
+}
+
+.price {
+    font-size: 2.25rem;
+}
+
+
+.viewButton {
+    padding: .5em 1em;
+    background-color: #FEFEFE;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
