@@ -1,13 +1,30 @@
 @font-face {
   font-family: "Helvetica Neue";
-  src: url(./assets/Helvetica\ Neue/HelveticaNeue-Medium.otf) format("opentype"),
-  url(./assets/Helvetica\ Neue/HelveticaNeue-Bold.otf) format("opentype"),
-  url(./assets/Helvetica\ Neue/HelveticaNeue-Light.otf) format("opentype"),
-  url(./assets/Helvetica\ Neue/HelveticaNeue-Thin.otf) format("opentype");
-  font-weight: 100 700;
+  src: url(./assets/Helvetica\ Neue/HelveticaNeue-Thin.otf) format("opentype");
+  font-weight: 100;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(./assets/Helvetica\ Neue/HelveticaNeue-Light.otf) format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(./assets/Helvetica\ Neue/HelveticaNeue-Medium.otf) format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(./assets/Helvetica\ Neue/HelveticaNeue-Bold.otf) format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
 @font-face {
   font-family: "Uniqlo Pro Light Regular";
   src: url("https://db.onlinewebfonts.com/t/13bf1d3e6c7119293f9c96e5678096e6.eot");
@@ -80,4 +97,8 @@ body {
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+main {
+  padding: 0 1rem;
 }

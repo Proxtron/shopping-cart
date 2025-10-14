@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import CatalogItem from "./CatalogItem";
+import styles from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
     const {catalogData, error, isLoading} = useCatalogData();
 
 
     return (
-        <div>
+        <div className={styles.catalogList}>
             {isLoading && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             {

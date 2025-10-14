@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
+import styles from "./CatalogItem.module.css";
 
 const CatalogItem = ({title, price, imageUrl}) => {
     return (
         <div>
-            <h2>{title}</h2>
-            <p>{price}</p>
-            <img src={imageUrl} alt={title}/>
+            <img className={styles.image} src={imageUrl} alt={title}/>
+            <h2 className={`${styles.text} ${styles.title}`}>{title}</h2>
+            <p className={`${styles.text} ${styles.price}`}>{price}</p>
         </div>
     );
 }
