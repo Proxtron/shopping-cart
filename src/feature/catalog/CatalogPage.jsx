@@ -1,43 +1,60 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import CatalogItem from "./CatalogItem";
 
 const CatalogPage = () => {
-    const {catalogData} = useCatalogData();
+    const {catalogData, error, isLoading} = useCatalogData();
+
 
     return (
         <div>
-            Hello from the catalog page
-            {catalogData.map((item) => {
+            {isLoading && <h2>Loading...</h2>}
+            {error && <h2>{error}</h2>}
+            {
+            catalogData.map((item) => {
                 return (
-                    <div key={item.id}>
-                        <h2>{item.title}</h2>
-                        <p>{item.price}</p>
-                        <img src={item.imageUrl}/>
-                    </div>
+                    <CatalogItem key={item.id} {...item}/>
                 )
-            })}
+            })
+            }
         </div>
     );
 }
 
 const useCatalogData = () => {
     const [catalogData, setCatalogData] = useState([]);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const customFetch = async () => {
-            const response = await fetch("http://localhost:3000/products", { method: "GET"});
-            if(!response.ok) {
-                throw new Error(`An error occured when retrieving catalog data: ${response.statusText}`);
+            try {
+                const response = await fetch("http://localhost:3000/products", { method: "GET"});
+                if(!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return await response.json();
+            } catch(error) {
+                throw new Error(`An error occured when retrieving catalog data: ${error.message}`);
             }
-            return await response.json();
         }
 
-        customFetch().then((data) => {
+        customFetch()
+        .then((data) => {
             setCatalogData(data);
+            setError(null);
         })
+        .catch((error) => {
+            setCatalogData([]);
+            setError(error.message);
+        })
+        .finally(() => {
+            setIsLoading(false);
+        });
+
     }, []);
 
-    return {catalogData}
+    return {catalogData, error, isLoading}
 }
 
 
