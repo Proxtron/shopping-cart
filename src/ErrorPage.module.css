@@ -1,0 +1,118 @@
+.errorPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.errorContainer {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.errorContent {
+  text-align: center;
+  background: #FEFEFE;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+}
+
+.errorStatus {
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
+
+.errorTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #212529;
+  margin: 0 0 1rem 0;
+}
+
+.errorMessage {
+  font-size: 1.125rem;
+  color: #6c757d;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.errorSuggestion {
+  font-size: 1rem;
+  color: #6c757d;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+.errorActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.secondaryButton {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #6c757d;
+  border: 2px solid #dee2e6;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondaryButton:hover {
+  background-color: #f8f9fa;
+  border-color: #adb5bd;
+  color: #495057;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .errorContainer {
+    padding: 1rem;
+  }
+
+  .errorContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .errorStatus {
+    font-size: 4rem;
+  }
+
+  .errorTitle {
+    font-size: 1.5rem;
+  }
+
+  .errorActions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 200px;
+  }
+}
