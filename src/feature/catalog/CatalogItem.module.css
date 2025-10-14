@@ -15,3 +15,8 @@
     font-size: 1.6rem;
     font-weight: 500;
 }
+
+.catalogItem {
+    text-decoration: none;
+    color:inherit;
+}

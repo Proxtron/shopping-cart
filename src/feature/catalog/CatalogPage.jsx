@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useEffect } from "react";
 import CatalogItem from "./CatalogItem";
 import styles from "./CatalogPage.module.css";
@@ -8,17 +8,20 @@ const CatalogPage = () => {
 
 
     return (
-        <div className={styles.catalogList}>
-            {isLoading && <h2>Loading...</h2>}
-            {error && <h2>{error}</h2>}
-            {
-            catalogData.map((item) => {
-                return (
-                    <CatalogItem key={item.id} {...item}/>
-                )
-            })
-            }
-        </div>
+        <>
+            <h1 className={styles.heading}>Catalog</h1>
+            <div className={styles.catalogList}>
+                {isLoading && <h2>Loading...</h2>}
+                {error && <h2>{error}</h2>}
+                {
+                catalogData.map((item) => {
+                    return (
+                        <CatalogItem key={item.id} {...item}/>
+                    )
+                })
+                }
+            </div>
+        </>
     );
 }
 

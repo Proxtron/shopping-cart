@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import CatalogItem from "../../../src/feature/catalog/CatalogItem";
+import { MemoryRouter } from "react-router";
 
 describe("CatalogItem component", () => {
   it("renders catalog item correctly", () => {
@@ -10,7 +11,11 @@ describe("CatalogItem component", () => {
         imageUrl: "test.jpg"
     };
 
-    render(<CatalogItem {...mockProps}/>);
+    render(
+      <MemoryRouter>
+        <CatalogItem {...mockProps}/>
+      </MemoryRouter>
+    );
 
     expect(screen.getByText("Test Product")).toBeInTheDocument();
     expect(screen.getByText("$10")).toBeInTheDocument();
