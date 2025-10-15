@@ -1,8 +1,9 @@
-import { useRouteError, Link } from "react-router";
+import { useRouteError, Link, useNavigate } from "react-router";
 import styles from "./ErrorPage.module.css";
 
 const ErrorPage = () => {
   const error = useRouteError();
+  const navigate = useNavigate();
 
   // Determine error message and status
   const getErrorInfo = () => {
@@ -44,15 +45,9 @@ const ErrorPage = () => {
           <p className={styles.errorSuggestion}>{errorInfo.suggestion}</p>
 
           <div className={styles.errorActions}>
-            <Link to="/" className={styles.primaryButton}>
-              Go to Homepage
+            <Link to="#" onClick={() => navigate(-1)} className={styles.primaryButton}>
+              Go Back
             </Link>
-            <button
-              onClick={() => window.location.reload()}
-              className={styles.secondaryButton}
-            >
-              Refresh Page
-            </button>
           </div>
         </div>
       </div>
