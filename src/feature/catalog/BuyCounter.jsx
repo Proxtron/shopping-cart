@@ -6,7 +6,7 @@ const BuyCounter = ({count, incrementCount, decrementCount}) => {
         <div className={styles.buyCounter}>
             {count === 1 && <button className={styles.button} onClick={decrementCount} disabled>—</button>}
             {count > 1 && <button className={styles.button} onClick={decrementCount}>—</button>}
-            <p className={styles.count}>{count}</p>
+            <p data-testid="counter" className={styles.count}>{count}</p>
             <button className={styles.plusButton} onClick={incrementCount}>+</button>
         </div>
     )

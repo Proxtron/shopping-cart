@@ -50,25 +50,25 @@ describe("CatalogItemPage component", () => {
         expect(screen.getByRole("heading", {name: "Loading..."})).toBeInTheDocument();
       });
     
-      it("handles fetch errors", async () => {
-        global.fetch = vi.fn(() =>
-          Promise.resolve({
-            ok: false,
-            statusText: "Not Found"
-          })
-        );
-    
-        render(
-          <MemoryRouter initialEntries={["/catalog/123"]}>
-            <Routes>
-              <Route path="/catalog/:catalogItemId" element={<CatalogItemPage />} />
-            </Routes>
-          </MemoryRouter>
-        );
-    
-        await waitFor(() => {
-          const heading = screen.getByRole("heading");
-          expect(heading.textContent).toBe("An error occured when retrieving catalog data: Not Found"); // Empty because title is undefined
-        });
+    it("handles fetch errors", async () => {
+      global.fetch = vi.fn(() =>
+        Promise.resolve({
+          ok: false,
+          statusText: "Not Found"
+        })
+      );
+  
+      render(
+        <MemoryRouter initialEntries={["/catalog/123"]}>
+          <Routes>
+            <Route path="/catalog/:catalogItemId" element={<CatalogItemPage />} />
+          </Routes>
+        </MemoryRouter>
+      );
+  
+      await waitFor(() => {
+        const heading = screen.getByRole("heading");
+        expect(heading.textContent).toBe("An error occured when retrieving catalog data: Not Found"); // Empty because title is undefined
       });
+    });
 });
