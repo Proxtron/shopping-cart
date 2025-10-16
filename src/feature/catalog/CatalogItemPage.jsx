@@ -1,11 +1,24 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import styles from "./CatalogItemPage.module.css";
+import BuyCounter from "./BuyCounter";
 
 const CatalogItemPage = () => {
     const { catalogItemId } = useParams();
     const { catalogItemData, isLoading, error } = useCatalogItemData(catalogItemId);
     
+    const [count, setCount] = useState(1);
+
+    const incrementCount = () => {
+        setCount(count + 1);
+    }
+
+    const decrementCount = () => {
+        if(count > 1) {
+            setCount(count - 1);
+        }  
+    }
+
     if(isLoading) {
         return (
             <h1>Loading...</h1>
@@ -27,7 +40,7 @@ const CatalogItemPage = () => {
                 <h1 className={styles.title}>{catalogItemData.title}</h1>
                 <p className={styles.price}>{catalogItemData.price}</p>
                 <div className={styles.actionGroup}>
-                    <p>Amount: 1</p>
+                    <BuyCounter count={count} incrementCount={incrementCount} decrementCount={decrementCount}/>
                     <button>Add to Cart</button>
                 </div>
             </div>

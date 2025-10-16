@@ -8,7 +8,7 @@ describe("CatalogItemPage component", () => {
         vi.clearAllMocks();
     });
 
-    it("displays catalog item information on a successful fetch", async () => {
+    it("displays CatalogItem info on a successful fetch", async () => {
         const mockItem = {title: "Item", price: "$10", imageUrl: "url"}
         global.fetch = vi.fn(() => {
             return Promise.resolve({
