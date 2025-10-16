@@ -5,11 +5,16 @@ import { useState } from 'react';
 function App() {
   const [numberInCart, setNumberInCart] = useState(0);
 
+  function addToNumberInCart(amount) {
+    setNumberInCart(numberInCart + amount);
+  } 
+
+  const context = {addToNumberInCart}
   return (
     <>
       <Header numberInCart={numberInCart}/>
       <main>
-        <Outlet/>
+        <Outlet context={context}/>
       </main>
     </>
   )

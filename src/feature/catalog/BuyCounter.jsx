@@ -15,7 +15,7 @@ const BuyCounter = ({count, incrementCount, decrementCount}) => {
 BuyCounter.propTypes = {
     incrementCount: PropTypes.func.isRequired,
     decrementCount: PropTypes.func.isRequired,
-    count: PropTypes.number.isRequired
+    count: PropTypes.number.isRequired,
 }
 
 export default BuyCounter;

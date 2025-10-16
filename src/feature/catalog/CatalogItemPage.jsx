@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useOutletContext, useParams } from "react-router";
 import { useState, useEffect } from "react";
 import styles from "./CatalogItemPage.module.css";
 import BuyCounter from "./BuyCounter";
@@ -6,6 +6,7 @@ import BuyCounter from "./BuyCounter";
 const CatalogItemPage = () => {
     const { catalogItemId } = useParams();
     const { catalogItemData, isLoading, error } = useCatalogItemData(catalogItemId);
+    const { addToNumberInCart } = useOutletContext();
     
     const [count, setCount] = useState(1);
 
@@ -34,14 +35,15 @@ const CatalogItemPage = () => {
     return (
         <div className={styles.catalogItemPage}>
             <div className={styles.catalogItemImageContainer}>
-                <img src={catalogItemData.imageUrl} alt={catalogItemData.title}/>
+                <img data-testid="item_image" src={catalogItemData.imageUrl} alt={catalogItemData.title}/>
             </div>
             <div className={styles.catalogItemDetails}>
                 <h1 className={styles.title}>{catalogItemData.title}</h1>
                 <p className={styles.price}>{catalogItemData.price}</p>
                 <div className={styles.actionGroup}>
-                    <BuyCounter count={count} incrementCount={incrementCount} decrementCount={decrementCount}/>
-                    <button>Add to Cart</button>
+                    <BuyCounter count={count} incrementCount={incrementCount}
+                        decrementCount={decrementCount}/>
+                    <button onClick={() => {addToNumberInCart(count)}}>Add to Cart</button>
                 </div>
             </div>
         </div>

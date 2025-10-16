@@ -1,7 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import CatalogItemPage from "../../../src/feature/catalog/CatalogItemPage";
-import { MemoryRouter, Routes, Route } from "react-router";
+import { MemoryRouter, Routes, Route, createMemoryRouter, RouterProvider } from "react-router";
+import {routes} from "../../../src/routes";
 
 describe("CatalogItemPage component", () => {
     beforeEach(() => {
@@ -17,18 +18,14 @@ describe("CatalogItemPage component", () => {
             })
         })
 
-        render(
-          <MemoryRouter initialEntries={["/catalog/123"]}>
-          <Routes>
-              <Route path="/catalog/:catalogItemId" element={<CatalogItemPage />} />
-          </Routes>
-          </MemoryRouter>
-        );
+        const router = createMemoryRouter(routes, {initialEntries: ["/catalog/123"]});
+        render(<RouterProvider router={router} />);
+
 
         await waitFor(() => {
             expect(screen.getByText(mockItem.title)).toBeInTheDocument();
             expect(screen.getByText(mockItem.price)).toBeInTheDocument();
-            expect(screen.getByRole("img").src).toContain("url");
+            expect(screen.getByTestId("item_image").src).toContain("url");
         });
     });
 
@@ -38,13 +35,10 @@ describe("CatalogItemPage component", () => {
           return new Promise(() => {});
         });
     
-        render(
-          <MemoryRouter initialEntries={["/catalog/123"]}>
-            <Routes>
-              <Route path="/catalog/:catalogItemId" element={<CatalogItemPage />} />
-            </Routes>
-          </MemoryRouter>
-        );
+        const router = createMemoryRouter(routes, {initialEntries: ["/catalog/123"]});
+        render(<RouterProvider router={router} />);
+
+
     
         // Component shows empty h1 initially (since catalogItemData.title is undefined)
         expect(screen.getByRole("heading", {name: "Loading..."})).toBeInTheDocument();
@@ -58,13 +52,10 @@ describe("CatalogItemPage component", () => {
         })
       );
   
-      render(
-        <MemoryRouter initialEntries={["/catalog/123"]}>
-          <Routes>
-            <Route path="/catalog/:catalogItemId" element={<CatalogItemPage />} />
-          </Routes>
-        </MemoryRouter>
-      );
+      const router = createMemoryRouter(routes, {initialEntries: ["/catalog/123"]});
+      render(<RouterProvider router={router} />);
+
+
   
       await waitFor(() => {
         const heading = screen.getByRole("heading");
