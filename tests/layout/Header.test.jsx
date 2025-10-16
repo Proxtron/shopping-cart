@@ -48,4 +48,11 @@ describe("Header component", () => {
 
         expect(cartLink.classList.contains(styles.underlined)).toBe(true);
     });
+
+    it("shows catalog link as underlined when in /catalog/1", () => {
+        render(<MemoryRouter initialEntries={["/catalog/1"]}><Header/></MemoryRouter>);
+        const catalogLink = screen.getByRole("link", {name: "Catalog"});
+
+        expect(catalogLink.classList.contains(styles.underlined)).toBe(true);
+    })
 })

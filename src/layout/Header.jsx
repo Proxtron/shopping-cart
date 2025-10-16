@@ -5,7 +5,7 @@ import cart from "../assets/cart.svg";
 
 const Header = () => {
     const location = useLocation();
-    const catalogSelected = location.pathname === "/catalog";
+    const catalogSelected = location.pathname.includes("/catalog");
     const cartSelected = location.pathname === "/cart";
 
     return (
