@@ -1,0 +1,31 @@
+.buyCounter {
+    display: flex;
+    background-color: #DDD;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.button {
+    background-color: inherit;
+    border:none;
+    width:32px;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.plusButton {
+    composes: button;
+    font-size: 1.25rem;
+}
+
+.padding {
+    padding:.75rem 1rem
+}
+
+.count {
+    composes: padding;
+    margin: 0;
+}
+
+
+

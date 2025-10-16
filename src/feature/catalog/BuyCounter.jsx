@@ -1,13 +1,13 @@
-import { useState } from "react";
+import styles from "./BuyCounter.module.css";
 import PropTypes from "prop-types";
 
 const BuyCounter = ({count, incrementCount, decrementCount}) => {
     return (
-        <div>
-            {count === 1 && <button onClick={decrementCount} disabled>—</button>}
-            {count > 1 && <button onClick={decrementCount}>—</button>}
-            <p>{count}</p>
-            <button onClick={incrementCount}>+</button>
+        <div className={styles.buyCounter}>
+            {count === 1 && <button className={styles.button} onClick={decrementCount} disabled>—</button>}
+            {count > 1 && <button className={styles.button} onClick={decrementCount}>—</button>}
+            <p className={styles.count}>{count}</p>
+            <button className={styles.plusButton} onClick={incrementCount}>+</button>
         </div>
     )
 }
