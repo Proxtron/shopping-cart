@@ -55,4 +55,14 @@ describe("Header component", () => {
 
         expect(catalogLink.classList.contains(styles.underlined)).toBe(true);
     })
+
+    it("does not display count cart circle when count cart is 0", () => {
+        render(<MemoryRouter><Header numberInCart={0}/></MemoryRouter>);
+        expect(screen.queryByText("0")).not.toBeInTheDocument();
+    })
+
+    it("display count cart circle when count cart is > 0", () => {
+        render(<MemoryRouter><Header numberInCart={4}/></MemoryRouter>);
+        expect(screen.getByText("4")).toBeInTheDocument();
+    })
 })

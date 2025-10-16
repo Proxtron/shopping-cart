@@ -34,10 +34,14 @@ exports[`HomePage component > renders correctly 1`] = `
       data-discover="true"
       href="/cart"
     >
-      <img
-        alt="Navigate to Cart Page"
-        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20viewBox='0%200%2024%2024'%20class='ito-primary-icon-color'%3e%3cpath%20fill='currentColor'%20fill-rule='evenodd'%20d='m7.044%206.566-.004-3.06H2.008v1.199h3.834l.014%2010.754h12.897l2.24-8.894zm10.774%207.694H7.055l-.008-6.495h12.407zm-.85%206.242a1.5%201.5%200%201%200%200-3%201.5%201.5%200%200%200%200%203m-8.015-1.5a1.5%201.5%200%201%201-3%200%201.5%201.5%200%200%201%203%200'%20clip-rule='evenodd'%3e%3c/path%3e%3c/svg%3e"
-      />
+      <div
+        class="_cart_c92180"
+      >
+        <img
+          alt="Navigate to Cart Page"
+          src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20fill='none'%20viewBox='0%200%2024%2024'%20class='ito-primary-icon-color'%3e%3cpath%20fill='currentColor'%20fill-rule='evenodd'%20d='m7.044%206.566-.004-3.06H2.008v1.199h3.834l.014%2010.754h12.897l2.24-8.894zm10.774%207.694H7.055l-.008-6.495h12.407zm-.85%206.242a1.5%201.5%200%201%200%200-3%201.5%201.5%200%200%200%200%203m-8.015-1.5a1.5%201.5%200%201%201-3%200%201.5%201.5%200%200%201%203%200'%20clip-rule='evenodd'%3e%3c/path%3e%3c/svg%3e"
+        />
+      </div>
     </a>
   </nav>
 </header>

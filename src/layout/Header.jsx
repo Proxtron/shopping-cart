@@ -2,8 +2,9 @@ import { Link, useLocation } from "react-router";
 import styles from "./Header.module.css";
 import uniqloLogo from "../assets/uniqlo-logo.svg";
 import cart from "../assets/cart.svg";
+import PropTypes from "prop-types";
 
-const Header = () => {
+const Header = ({numberInCart}) => {
     const location = useLocation();
     const catalogSelected = location.pathname.includes("/catalog");
     const cartSelected = location.pathname === "/cart";
@@ -26,11 +27,20 @@ const Header = () => {
                     ${cartSelected && styles.underlined}
                 `} 
                 >
-                    <img src={cart} alt="Navigate to Cart Page"/>
+                    <div className={styles.cart}>
+                        <img src={cart} alt="Navigate to Cart Page"/>
+                        {numberInCart > 0 && <p className={styles.numberInCart}>{numberInCart}</p>} 
+                    </div>
+                    
+                    
                 </Link>
             </nav>
         </header>
     )
+}
+
+Header.propTypes = {
+    numberInCart: PropTypes.number.isRequired
 }
 
 export default Header;
