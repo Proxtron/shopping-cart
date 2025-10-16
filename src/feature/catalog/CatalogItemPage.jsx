@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
+import styles from "./CatalogItemPage.module.css";
 
 const CatalogItemPage = () => {
     const { catalogItemId } = useParams();
@@ -18,12 +19,18 @@ const CatalogItemPage = () => {
     }
 
     return (
-        <div>
-            <img src={catalogItemData.imageUrl} alt={catalogItemData.title}/>
-            <h1>{catalogItemData.title}</h1>
-            <p>{catalogItemData.price}</p>
-            <p>Amount: 1</p>
-            <button>Add to Cart</button>
+        <div className={styles.catalogItemPage}>
+            <div className={styles.catalogItemImageContainer}>
+                <img src={catalogItemData.imageUrl} alt={catalogItemData.title}/>
+            </div>
+            <div className={styles.catalogItemDetails}>
+                <h1 className={styles.title}>{catalogItemData.title}</h1>
+                <p className={styles.price}>{catalogItemData.price}</p>
+                <div className={styles.actionGroup}>
+                    <p>Amount: 1</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
         </div>
     );
 }

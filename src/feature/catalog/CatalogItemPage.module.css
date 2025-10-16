@@ -1,0 +1,38 @@
+.catalogItemPage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.catalogItemImageContainer {
+    justify-self: center;
+}
+
+.catalogItemDetails {
+    text-align: left;
+    align-self: center;
+}
+
+.title {
+    font-size:1.35rem;
+    font-weight: 300;
+}
+
+.price {
+    font-size:2.25rem;
+    font-weight: 500;
+}
+
+.actionGroup {
+    display: flex;
+    gap:2rem;
+}
+
+@media screen and (max-width: 768px){
+    .catalogItemPage {
+        display: block;
+    }
+
+    .catalogItemImageContainer {
+        margin-bottom: 2rem;
+    }
+}
