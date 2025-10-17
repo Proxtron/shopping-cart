@@ -43,7 +43,7 @@ const CatalogItemPage = () => {
                 <div className={styles.actionGroup}>
                     <BuyCounter count={count} incrementCount={incrementCount}
                         decrementCount={decrementCount}/>
-                    <button onClick={() => {addToNumberInCart(count)}}>Add to Cart</button>
+                    <button className={styles.addToCartBtn} onClick={() => {addToNumberInCart(count)}}>Add to Cart</button>
                 </div>
             </div>
         </div>
