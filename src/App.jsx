@@ -9,7 +9,7 @@ function App() {
     setNumberInCart(numberInCart + amount);
   } 
 
-  const context = {addToNumberInCart}
+  const context = {numberInCart, addToNumberInCart}
   return (
     <>
       <Header numberInCart={numberInCart}/>
