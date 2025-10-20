@@ -1,6 +1,7 @@
 import { useOutletContext, Link } from "react-router";
 import styles from "./CartPage.module.css";
 import CartItem from "./CartItem";
+import CartTotal from "./CartTotal";
 
 const CartPage = () => {
     const {numberInCart, itemsInCart, updateItemCount} = useOutletContext();
@@ -22,8 +23,10 @@ const CartPage = () => {
                     }
                 </div>
                 <div className={styles.summarySection}>
-                    <h2>Order Summary</h2>
-                    <h2>{numberInCart} item(s)</h2>
+                    <h2 className={styles.rightAlign}>Order Summary</h2>
+                    <h2 className={styles.rightAlign}>{numberInCart} item(s)</h2>
+                    <CartTotal itemsInCart={itemsInCart}/>
+                    <button className={styles.checkoutBtn}>Checkout</button>
                 </div>
             </div>
         </div>
