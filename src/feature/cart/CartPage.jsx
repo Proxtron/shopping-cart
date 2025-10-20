@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useOutletContext, Link } from "react-router";
 import styles from "./CartPage.module.css";
 import CartItem from "./CartItem";

@@ -60,4 +60,20 @@ describe("CartPage component", () => {
         expect(
         screen.getByRole("heading", {name: "5 item(s)"})).toBeInTheDocument();
     })
+
+    it("displays 2 cart items sections with 2 different cart items", () => {
+        mockUseOutletContext.mockReturnValue({
+            itemsInCart: [
+                {id: 1, title:"", price:"", imageUrl: null, amount: 1},
+                {id: 2, title:"", price:"", imageUrl: null, amount: 1}
+            ],
+            numberInCart: 2,
+            updateItemCount: vi.fn()
+        });
+        const router = createMemoryRouter(routes, { initialEntries: ["/cart"] });
+
+        render(<RouterProvider router={router} />);
+
+        expect(screen.getAllByTestId("cartItem").length).toBe(2);
+    });
 });
