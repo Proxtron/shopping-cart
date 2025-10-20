@@ -6,7 +6,7 @@ import BuyCounter from "./BuyCounter";
 const CatalogItemPage = () => {
     const { catalogItemId } = useParams();
     const { catalogItemData, isLoading, error } = useCatalogItemData(catalogItemId);
-    const { addToNumberInCart } = useOutletContext();
+    const { addToNumberInCart, addItemsToCart } = useOutletContext();
     
     const [count, setCount] = useState(1);
 
@@ -43,7 +43,10 @@ const CatalogItemPage = () => {
                 <div className={styles.actionGroup}>
                     <BuyCounter count={count} incrementCount={incrementCount}
                         decrementCount={decrementCount}/>
-                    <button className={styles.addToCartBtn} onClick={() => {addToNumberInCart(count)}}>Add to Cart</button>
+                    <button className={styles.addToCartBtn} onClick={() => {
+                        addToNumberInCart(count);
+                        addItemsToCart(catalogItemData, count);
+                    }}>Add to Cart</button>
                 </div>
             </div>
         </div>
