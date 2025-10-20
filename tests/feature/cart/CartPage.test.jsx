@@ -21,7 +21,11 @@ describe("CartPage component", () => {
     })
 
     it("renders Shopping Cart when item count > 0", () => {
-        mockUseOutletContext.mockReturnValue({numberInCart: 5});
+        mockUseOutletContext.mockReturnValue({
+            itemsInCart: [],
+            numberInCart: 5,
+            updateItemCount: vi.fn()
+        });
         const router = createMemoryRouter(routes, { initialEntries: ["/cart"] });
 
         render(<RouterProvider router={router} />);
@@ -44,7 +48,11 @@ describe("CartPage component", () => {
     });
 
     it("displays the 5 item(s) heading when numberInCart is 5", () => {
-        mockUseOutletContext.mockReturnValue({numberInCart: 5});
+        mockUseOutletContext.mockReturnValue({
+            itemsInCart: [],
+            numberInCart: 5,
+            updateItemCount: vi.fn()
+        });
         const router = createMemoryRouter(routes, { initialEntries: ["/cart"] });
 
         render(<RouterProvider router={router} />);

@@ -4,7 +4,8 @@ import styles from "./CartPage.module.css";
 import CartItem from "./CartItem";
 
 const CartPage = () => {
-    const {numberInCart, itemsInCart} = useOutletContext();
+    const {numberInCart, itemsInCart, updateItemCount} = useOutletContext();
+
     if(numberInCart === 0) {
         return <div className={styles.cartPageEmpty}><h1>Looks like your shopping cart is empty! Head to the <Link to="/catalog">catalog page</Link></h1></div>;
     }
@@ -15,10 +16,10 @@ const CartPage = () => {
             <div className={styles.cartWrapper}>
                 <div className={styles.itemsSection}>
                     {
-                        Object.keys(itemsInCart).map((key) => {
-                            const value = itemsInCart[key];
-                            return <CartItem key={key} {...value}/>
-                        })
+                        itemsInCart.map((item) => 
+                             <CartItem key={item.id} {...item} 
+                                updateItemCount={updateItemCount}/>
+                        )
                     }
                 </div>
                 <div className={styles.summarySection}>
@@ -28,10 +29,6 @@ const CartPage = () => {
             </div>
         </div>
     );
-}
-
-CartPage.propTypes = {
-    numberInCart: PropTypes.number.isRequired,
 }
 
 export default CartPage;

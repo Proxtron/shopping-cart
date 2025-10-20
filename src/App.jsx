@@ -3,42 +3,61 @@ import Header from './layout/Header'
 import { useState } from 'react';
 
 function App() {
-  const [numberInCart, setNumberInCart] = useState(0);
-  const [itemsInCart, setItemsInCart] = useState({});
-
-  function addToNumberInCart(amount) {
-    setNumberInCart(numberInCart + amount);
-  }
+  const [itemsInCart, setItemsInCart] = useState([]);
+  const numberInCart = itemsInCart.reduce((acc, item) => acc + item.amount, 0);
 
   function addItemsToCart(item, amount) {
-    let newItemRecord;
+    const itemIndex = itemsInCart.findIndex((itemInCart) => itemInCart.id === item.id);
 
-    //New item being added to the cart.
-    if(!itemsInCart[item.id]) {
-      newItemRecord = {
-        amount: amount,
-        title: item.title,
-        price: item.price,
-        imageUrl: item.imageUrl
-      };
+    //itemIndex is -1: means the item is not in the cart
+    if(itemIndex < 0) {
+      setItemsInCart([
+        ...itemsInCart,
+        {
+          id: item.id,
+          title: item.title,
+          price: item.price,
+          imageUrl: item.imageUrl,
+          amount: amount
+        }
+      ])
     } 
-
-    //More of the same item in the cart being added
+    
+    //Item is already in the cart
     else {
-      const prevAmount = itemsInCart[item.id].amount;
-      newItemRecord = {
-        ...itemsInCart[item.id],
-        amount: prevAmount + amount
-      }
+      const itemInCart = itemsInCart[itemIndex];
+      itemInCart.amount += amount;
+      setItemsInCart([...itemsInCart]);
     }
-
-    setItemsInCart({
-      ...itemsInCart,
-      [item.id]: newItemRecord
-    })
   }
 
-  const context = {numberInCart, addToNumberInCart, addItemsToCart, itemsInCart}
+  function updateItemCount(item, amount) {
+    const itemIndex = itemsInCart.findIndex((itemInCart) => itemInCart.id === item.id);
+
+    //itemIndex is -1: means the item is not in the cart
+    if(itemIndex < 0) {
+      setItemsInCart([
+        ...itemsInCart,
+        {
+          id: item.id,
+          title: item.title,
+          price: item.price,
+          imageUrl: item.imageUrl,
+          amount: amount
+        }
+      ])
+    } 
+    
+    //Item is already in the cart
+    else {
+      const itemInCart = itemsInCart[itemIndex];
+      itemInCart.amount = amount;
+      setItemsInCart([...itemsInCart]);
+    }
+  }
+
+  const context = {numberInCart, addItemsToCart, itemsInCart, updateItemCount}
+
   return (
     <>
       <Header numberInCart={numberInCart}/>
