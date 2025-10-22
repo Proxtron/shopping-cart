@@ -1,6 +1,6 @@
-const productsData = require('../../db.json');
+import productsData from '../../db.json'
 
-module.exprots = function handler(req, res) {
+export default function handler(req, res) {
   const { id } = req.query;
   const product = productsData.products.find(p => p.id === id);
   
