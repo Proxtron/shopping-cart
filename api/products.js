@@ -1,4 +1,4 @@
-import productsData from '../db.json' assert { type: 'json' };
+const productsData = require('../db.json');
 
 export default function handler(req, res) {
   res.status(200).json(productsData.products);
