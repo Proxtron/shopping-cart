@@ -60,7 +60,8 @@ const useCatalogItemData = (catalogItemId) => {
     useEffect(() => {
         const customFetch = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/products/${catalogItemId}`, { method: "GET"});
+                const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+                const response = await fetch(`${API_URL}/products/${catalogItemId}`, { method: "GET"});
                 if(!response.ok) {
                     throw new Error(response.statusText);
                 }
