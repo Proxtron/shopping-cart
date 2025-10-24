@@ -2,7 +2,9 @@
     display: flex;
     background-color: #EEE;
     align-items: center;
+    justify-content: space-between;
     border-radius: 1rem;
+    max-width:125px;
 }
 
 .button {
